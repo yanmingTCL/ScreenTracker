@@ -17,17 +17,19 @@ Stealth mode operation
 
 ⌨️ ​Keystroke Logging:
 
-Background keyboard/mouse activity monitoring
-Timestamped log recording
-Window title/application context tracking
+Background keyboard/mouse activity monitoring.
+Timestamped log recording.
+Window title/application context tracking.
 
 🔒 ​Data Management:
 
-Encrypted local storage (SQLite/CSV)
-Activity timeline reconstruction
-Secure data export (CSV/avif)
-Automatic cleanup policies
-Tech Stack
+Encrypted local storage (SQLite/CSV).
+Activity timeline reconstruction.
+Secure data export (CSV/avif).
+Automatic cleanup policies.
+
+
+Tech Stack:
 
 Python 3.8+
 pyAutoGUI/ImageGrab (screenshots)
