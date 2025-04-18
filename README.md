@@ -3,7 +3,8 @@ Python cross-platform monitor with GUI (wxPython), screen/keyboard/mouse recordi
 
 A cross-platform monitoring solution that captures user activity through screen recording and keyboard/mouse logging, with secure data management capabilities. Ideal for parental control, employee monitoring, or personal productivity analysis (use responsibly and in compliance with local laws).
 ![image](https://github.com/user-attachments/assets/a302d818-307a-46ca-b5e5-7bfa5f2a741b)
-![image](https://github.com/user-attachments/assets/c8de4436-9270-4796-98c9-3511cc328ba6)
+![image](https://github.com/user-attachments/assets/d7b2e65f-d6c8-426f-acf5-39661bcf2b4c)
+
 
 
 
