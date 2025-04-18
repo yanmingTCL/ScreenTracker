@@ -17,6 +17,7 @@ Customizable capture intervals & image.
 
 Stealth mode operation.
 
+
 ⌨️ ​Keystroke Logging:
 
 Background keyboard/mouse activity monitoring.
@@ -24,6 +25,7 @@ Background keyboard/mouse activity monitoring.
 Timestamped log recording.
 
 Window title/application context tracking.
+
 
 🔒 ​Data Management:
 
@@ -39,10 +41,15 @@ Automatic cleanup policies.
 Tech Stack:
 
 Python 3.8+
+
 pyAutoGUI/ImageGrab (screenshots)
+
 keyboard/pynput (input capture)
+
 sqlite3/Cryptography (data security)
+
 wxPyhon (GUI)
-Use Responsibly
+
+Use Responsibly:
 ⚠️ This tool should only be deployed on systems where you have explicit authorization. Includes sample consent templates for organizational use. Developers assume no liability for misuse.
 
