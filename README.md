@@ -7,19 +7,19 @@ A cross-platform monitoring solution that captures user activity through screen 
 
 
 
-Key Features
-📸 ​Screen Capture
+Key Features:
 
+📸 ​Screen Capture
 Periodic/trigger-based screenshot recording
 Customizable capture intervals & image
 Stealth mode operation
-⌨️ ​Keystroke Logging
 
+⌨️ ​Keystroke Logging
 Background keyboard/mouse activity monitoring
 Timestamped log recording
 Window title/application context tracking
-🔒 ​Data Management
 
+🔒 ​Data Management
 Encrypted local storage (SQLite/CSV)
 Activity timeline reconstruction
 Secure data export (CSV/avif)
