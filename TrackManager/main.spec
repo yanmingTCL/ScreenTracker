@@ -5,7 +5,7 @@ block_cipher = None
 
 
 a = Analysis(
-    ['main.py', 'login_frame.py',  'track_browser.py',  'sqlite.py', 'images_plugin.py'],
+    [ 'track_browser.py',  'sqlite.py', 'images_plugin.py'],
     pathex=[],
     binaries=[],
     datas=[('trackDB.db', '.'), ('_cache', '.'), ('server.config', '.')],
