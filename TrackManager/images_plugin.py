@@ -1,11 +1,10 @@
-'''
-Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
-Date: 2025-04-11 10:08:37
-LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
-LastEditTime: 2025-04-23 11:27:26
-FilePath: \code\client_browserV5\images_plugin.py
-Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-'''
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#  @Time    : 2025-01-17 21:30
+#  @Author  : yanmin
+#  @Site    :
+#  @File    : .py
+#  @Software: vscode
 #!/usr/bin/env python
 import os
 from PIL import Image
@@ -60,11 +59,9 @@ class ThumbnailFrame(wx.Frame):
                 image_path = image_cache_path + image_path
                 
                 try:
-                    # 使用PIL打开图片并调整大小
                     with Image.open(image_path) as img:
-                        # 调整图片大小为缩略图
                         img.thumbnail((750, 500))
-                        # 转换为wx.Bitmap
+                        # wx.Bitmap
                         width, height = img.size
                         img_data = io.BytesIO()
                         img.save(img_data, format='PNG')
