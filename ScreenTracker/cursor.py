@@ -11,7 +11,6 @@ class CursorOverlay:
     
     def _init_platform(self):
         if self.platform == 'win32':
-            # 延迟导入Windows专属库
             global win32gui, win32ui, win32con, win32api
             import win32gui
             import win32ui
@@ -31,28 +30,20 @@ class CursorOverlay:
             return Image.new('RGB', (0,0)), 0, 0  # macOS空实现
         
     def _windows_screenshot(self):
-        """保持原有代码结构的Windows实现"""
-        #  参数获取
         width = win32api.GetSystemMetrics(win32con.SM_CXSCREEN)
         height = win32api.GetSystemMetrics(win32con.SM_CYSCREEN)
         left = 0
         top = 0
-
-        #  设备上下文创建
         hdesktop = win32gui.GetDesktopWindow()
         desktop_dc = win32gui.GetWindowDC(hdesktop)
         mem_dc = win32ui.CreateDCFromHandle(desktop_dc)
         save_dc = mem_dc.CreateCompatibleDC()
-
-        # 位图创建
         save_bitmap = win32ui.CreateBitmap()
         save_bitmap.CreateCompatibleBitmap(mem_dc, width, height)
         save_dc.SelectObject(save_bitmap)
 
-        #  屏幕拷贝
         save_dc.BitBlt((0, 0), (width, height), mem_dc, (left, top), win32con.SRCCOPY)
 
-        #  光标处理
         cursor_info = win32gui.GetCursorInfo()
         if cursor_info and cursor_info[1]:
             try:
@@ -70,7 +61,6 @@ class CursorOverlay:
                 if icon_info[1]: win32gui.DeleteObject(icon_info[1])
             except Exception: pass
 
-        #  图像转换
         bmp_info = save_bitmap.GetInfo()
         bmp_str = save_bitmap.GetBitmapBits(True)
         image = Image.frombuffer(
@@ -79,24 +69,9 @@ class CursorOverlay:
             bmp_str, 'raw', 'BGRX', 0, 1
         )
 
-        #  资源释放
         win32gui.DeleteObject(save_bitmap.GetHandle())
         save_dc.DeleteDC()
         mem_dc.DeleteDC()
         win32gui.ReleaseDC(hdesktop, desktop_dc)
 
         return image, width, height
-
-# if __name__ == "__main__":
-#     # 保持原有主逻辑不变
-#     capturer = CursorOverlay()
-#     try:
-#         while True:
-#             img, w, h = capturer.screenshot_with_cursor()
-#             if img:
-#                 filename = f"./screenshot/screenshot_{datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
-#                 img.save(filename)
-#                 print(f"Saved {w}x{h} screenshot: {filename}")
-#             time.sleep(1)
-#     except KeyboardInterrupt:
-#         print("Capture stopped.")
