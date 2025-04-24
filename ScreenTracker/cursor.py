@@ -17,7 +17,6 @@ class CursorOverlay:
             import win32con
             import win32api
             
-            # 保持原有DPI设置
             try:
                 ctypes.windll.shcore.SetProcessDpiAwareness(2)
             except:
