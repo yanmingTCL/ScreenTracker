@@ -14,7 +14,7 @@ import signal
 import sys
 
 from sqlite import SqlitePool
-from cursor import CursorOverlay
+#from cursor import CursorOverlay
 from collections import deque
 # Ctrl+C 
 #signal.signal(signal.SIGINT, lambda *_: None)
@@ -36,7 +36,7 @@ path_cache = './_cache/'
 db_path = './trackDB.db'
 
 sql_conn = None
-overlay = None
+#overlay = None
 
 max_queue_size = 3
 free_queue = deque()
@@ -338,9 +338,9 @@ class MainWindow(wx.Frame):
             
             img = None
             try:
-                #img = ImageGrab.grab()
-                #width, height = img.size
-                img, width, height  = overlay.screenshot_with_cursor()
+                img = ImageGrab.grab()
+                width, height = img.size
+                #img, width, height  = overlay.screenshot_with_cursor()
                 str_screenshot_id = "{}_{}_{}-{}".format(str_mac_address, time_stamp, width, height)
             except Exception as e:
                 logger.debug(f'ImageGrab Error: {e}')
@@ -377,7 +377,7 @@ if __name__ == "__main__":
     mac_address = get_mac_address()
     
     sql_conn = SqlitePool(db_path)
-    overlay = CursorOverlay()
+    #overlay = CursorOverlay()
     
     frame = MainWindow()
     frame.Show()
